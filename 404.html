@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Page Not Found | Hans Soni</title>
+  <meta name="description" content="Oops! The page you're looking for doesn't exist. Head back to Hans Soni's portfolio.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="./ds/styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caprasimo:wght@400&family=Figtree:wght@400;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      overflow: hidden;
+      transition: background-color .4s ease, color .4s ease;
+    }
+
+    /* Dark mode */
+    body[data-theme='dark'] {
+      --color-bg: #201e1d;
+      --color-surface: #2c2925;
+      --color-text: #f5ead8;
+      --color-divider: color-mix(in srgb, #f5ead8 18%, transparent);
+      --color-accent: #f6a06b;
+      --color-accent-2: #aebf92;
+      --color-accent-100: #402310;
+      --color-accent-800: #ffe1d0;
+      --color-accent-2-100: #272e1b;
+      --color-accent-2-800: #e1eecc;
+      --color-neutral-100: #3a3630;
+      --color-neutral-800: #f4efe6;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+      --shadow-md: 0 6px 18px rgba(0,0,0,.4);
+      --shadow-lg: 0 20px 48px rgba(0,0,0,.5);
+    }
+
+    /* Floating background shapes */
+    .bg-shapes {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.18;
+    }
+    .shape-1 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, var(--color-accent), transparent 70%);
+      top: -120px; left: -80px;
+      animation: floatA 7s ease-in-out infinite;
+    }
+    .shape-2 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, var(--color-accent-2), transparent 70%);
+      bottom: -60px; right: -60px;
+      animation: floatB 9s ease-in-out infinite;
+    }
+    .shape-3 {
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, var(--color-accent-400), transparent 70%);
+      top: 55%; left: 70%;
+      animation: floatC 11s ease-in-out infinite;
+    }
+    .shape-4 {
+      width: 160px; height: 160px;
+      background: radial-gradient(circle, var(--color-accent-2-400), transparent 70%);
+      top: 20%; right: 15%;
+      animation: floatD 8s ease-in-out infinite;
+    }
+
+    @keyframes floatA {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -22px; }
+    }
+    @keyframes floatB {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 14px 10px; }
+    }
+    @keyframes floatC {
+      0%, 100% { translate: 0 0; }
+      50% { translate: -10px -14px; }
+    }
+    @keyframes floatD {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 8px -18px; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: .5; }
+      50% { opacity: .9; }
+    }
+    @keyframes glitchSlide {
+      0%   { clip-path: inset(0 0 98% 0); transform: translateX(-4px); }
+      10%  { clip-path: inset(20% 0 60% 0); transform: translateX(4px); }
+      20%  { clip-path: inset(50% 0 30% 0); transform: translateX(-2px); }
+      30%  { clip-path: inset(80% 0 5% 0);  transform: translateX(3px); }
+      40%  { clip-path: inset(0 0 0 0); transform: translateX(0); }
+      100% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+    }
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(30px) scale(0.92); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Main layout */
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    /* Glassy card */
+    .glass-card {
+      background: color-mix(in srgb, var(--color-surface) 78%, transparent);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+      border-radius: 32px;
+      padding: 56px 60px 48px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--color-accent) 8%, transparent);
+      animation: fadeSlideUp .6s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    /* 404 number */
+    .number-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .glow-ring {
+      width: 170px; height: 170px;
+      border-radius: 50%;
+      border: 2px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+      position: absolute;
+      top: 50%; left: 50%;
+      translate: -50% -50%;
+      animation: pulseGlow 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .error-code {
+      font-family: var(--font-heading);
+      font-size: clamp(96px, 18vw, 148px);
+      line-height: 1;
+      letter-spacing: -4px;
+      color: var(--color-accent);
+      margin: 0;
+      animation: countUp .7s cubic-bezier(.22,1,.36,1) .1s both;
+      position: relative;
+      display: inline-block;
+    }
+    .error-code::before {
+      content: '404';
+      position: absolute;
+      inset: 0;
+      color: var(--color-accent-2);
+      animation: glitchSlide 4s ease-in-out 1.5s infinite;
+      opacity: 0.55;
+    }
+
+    /* Typography */
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: clamp(22px, 4vw, 30px);
+      margin: 0 0 12px;
+      animation: fadeSlideUp .6s cubic-bezier(.22,1,.36,1) .25s both;
+    }
+    .error-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: color-mix(in srgb, var(--color-text) 65%, transparent);
+      margin: 0 0 32px;
+      animation: fadeSlideUp .6s cubic-bezier(.22,1,.36,1) .35s both;
+    }
+
+    /* Path pill */
+    .path-display {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-neutral-100);
+      border: 1px solid var(--color-divider);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-family: 'Courier New', monospace;
+      color: color-mix(in srgb, var(--color-text) 70%, transparent);
+      margin-bottom: 32px;
+      animation: fadeSlideUp .6s cubic-bezier(.22,1,.36,1) .4s both;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .path-display .cursor {
+      display: inline-block;
+      width: 2px; height: 14px;
+      background: var(--color-accent);
+      border-radius: 1px;
+      animation: blink .8s step-end infinite;
+      flex: none;
+    }
+
+    /* Action buttons */
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeSlideUp .6s cubic-bezier(.22,1,.36,1) .5s both;
+    }
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--color-accent) 35%, transparent);
+    }
+    .btn-home:hover {
+      background: var(--color-accent-600);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px color-mix(in srgb, var(--color-accent) 40%, transparent);
+    }
+    .btn-home:active { transform: translateY(0); }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--color-text);
+      border: 1px solid var(--color-divider);
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-back:hover {
+      background: color-mix(in srgb, var(--color-text) 7%, transparent);
+      transform: translateY(-2px);
+    }
+    .btn-back:active { transform: translateY(0); }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px; right: 20px;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--color-divider);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+      z-index: 10;
+    }
+    .theme-toggle:hover {
+      background: color-mix(in srgb, var(--color-text) 10%, transparent);
+    }
+    .icon-sun, .icon-moon { display: none; }
+    body:not([data-theme='dark']) .icon-sun { display: block; }
+    body[data-theme='dark'] .icon-moon { display: block; }
+
+    /* Brand badge */
+    .brand {
+      position: fixed;
+      top: 20px; left: 20px;
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+      color: var(--color-text);
+      z-index: 10;
+    }
+    .brand-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      flex: none;
+    }
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 17px;
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .glass-card { padding: 40px 28px 36px; }
+      .brand-name { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background floating orbs -->
+  <div class="bg-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <!-- Brand -->
+  <a class="brand" href="/" aria-label="Back to Hans Soni portfolio">
+    <span class="brand-avatar">HS</span>
+    <span class="brand-name">Hans Soni</span>
+  </a>
+
+  <!-- Theme toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4.2"></circle>
+      <path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"></path>
+    </svg>
+    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+    </svg>
+  </button>
+
+  <!-- Main -->
+  <main class="page" role="main">
+    <div class="glass-card">
+
+      <div class="number-wrap" aria-label="404">
+        <div class="glow-ring" aria-hidden="true"></div>
+        <p class="error-code" aria-hidden="true">404</p>
+      </div>
+
+      <h1 class="error-title">Page Not Found</h1>
+
+      <p class="error-desc">
+        Looks like this page wandered off into the void.<br>
+        The URL you followed doesn't exist or has been moved.
+      </p>
+
+      <div class="path-display" id="pathDisplay" aria-label="Requested URL">
+        <span id="pathText"></span>
+        <span class="cursor" aria-hidden="true"></span>
+      </div>
+
+      <div class="actions">
+        <a class="btn-home" href="/" id="homeBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12L12 3l9 9"></path>
+            <path d="M9 21V12h6v9"></path>
+            <path d="M4 11v10h16V11"></path>
+          </svg>
+          Go Home
+        </a>
+        <button class="btn-back" id="backBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+          Go Back
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Theme — reads the same localStorage key as the main portfolio
+    const root = document.body;
+    const stored = localStorage.getItem('hs-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (stored === 'dark' || (!stored && prefersDark)) {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('hs-theme', 'light');
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('hs-theme', 'dark');
+      }
+    });
+
+    // Display current bad path
+    const pathEl = document.getElementById('pathText');
+    const fullPath = window.location.pathname + window.location.search;
+    const displayPath = fullPath.length > 42
+      ? fullPath.slice(0, 39) + '...'
+      : fullPath;
+    pathEl.textContent = displayPath || '/';
+
+    // Go Back
+    document.getElementById('backBtn').addEventListener('click', () => {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = '/';
+      }
+    });
+  </script>
+
+</body>
+</html>

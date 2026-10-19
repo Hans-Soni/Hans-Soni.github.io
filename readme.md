@@ -4,7 +4,7 @@ A high-performance, interactive personal portfolio website showcasing my softwar
 ## 🌐 Live Preview
 You can view the live portfolio deployed on either of the following platforms:
 
-[GitHub](https://hans-soni.github.io/Hans-Soni/)
+[GitHub](https://hans-soni.github.io/)
 
 [Netlify](https://hanssoni.netlify.app/)
 
