@@ -65,11 +65,15 @@ Highlights a security-first engineering approach, reflecting my background in en
 ## 👨‍💻 About Me
 I am a Computer Science undergraduate engineering secure, full-stack software. My work spans from end-to-end encrypted messaging to RESTful API design and defensive input handling. I am passionate about building systems where encryption and secure coding are at the core of the architecture.
 
-## LinkedIn: 
+## LinkedIn:
 [Hans-Soni](https://www.linkedin.com/in/hans-soni-59b294352)
-## LeetCode: 
+## GitHub:
+[Hans-Soni](https://github.com/Hans-Soni)
+## LeetCode:
 [Hans-Soni](https://leetcode.com/u/hanssoni/)
 ## Credly:
 [Hans-Soni](https://www.credly.com/users/hans-soni/badges/credly)
-## Email: 
+## Google Skills:
+[Hans-Soni](https://www.skills.google/public_profiles/e68808c6-c66b-4b9d-bb3f-3aa6d3e7564f)
+## Email:
 [Hans-Soni](mailto:hanssureshsoni@gmail.com)
