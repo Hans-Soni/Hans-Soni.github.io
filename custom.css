@@ -21,10 +21,6 @@
   transition: transform .18s ease-out;
 }
 
-#contact-status[data-state="success"] {
-  color: var(--neon-lime);
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

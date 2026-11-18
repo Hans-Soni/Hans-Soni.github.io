@@ -169,18 +169,12 @@
             <div><label for="name" class="mb-1 block font-mono text-xs text-muted-foreground">name</label><input id="name" name="name" type="text" maxlength="100" autocomplete="name" placeholder="Your name" class="w-full rounded-2xl border border-border bg-background/60 px-4 py-3 outline-none transition focus:border-neon-lime focus:shadow-[0_0_20px_color-mix(in_oklab,var(--neon-lime)_35%,transparent)]"><p data-error-for="name" class="mt-1 text-sm text-destructive" hidden></p></div>
             <div><label for="email" class="mb-1 block font-mono text-xs text-muted-foreground">email</label><input id="email" name="email" type="email" maxlength="255" autocomplete="email" placeholder="you@example.com" class="w-full rounded-2xl border border-border bg-background/60 px-4 py-3 outline-none transition focus:border-neon-lime focus:shadow-[0_0_20px_color-mix(in_oklab,var(--neon-lime)_35%,transparent)]"><p data-error-for="email" class="mt-1 text-sm text-destructive" hidden></p></div>
             <div><label for="message" class="mb-1 block font-mono text-xs text-muted-foreground">message</label><textarea id="message" name="message" rows="5" maxlength="2000" placeholder="Tell me about your project or opportunity…" class="w-full rounded-2xl border border-border bg-background/60 px-4 py-3 outline-none transition focus:border-neon-lime focus:shadow-[0_0_20px_color-mix(in_oklab,var(--neon-lime)_35%,transparent)]"></textarea><p data-error-for="message" class="mt-1 text-sm text-destructive" hidden></p></div>
-            <p id="contact-status" class="text-sm text-destructive" role="status" aria-live="polite" hidden></p>
-            <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-[0_0_30px_var(--neon-lime)] transition hover:scale-[1.03] disabled:opacity-60">
+            <p id="contact-status" class="text-sm text-neon-cyan" role="status" aria-live="polite" hidden></p>
+            <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-[0_0_30px_var(--neon-lime)] transition hover:scale-[1.03]">
               <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
-              <span>Send message</span>
+              <span>Open email draft</span>
             </button>
           </div>
-            <div id="contact-success" class="flex min-h-80 flex-col items-center justify-center gap-4 text-center" hidden>
-              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-16 w-16 text-neon-lime" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path><circle cx="12" cy="12" r="10"></circle></svg>
-              <h3 class="text-2xl font-bold">Message sent!</h3>
-              <p class="text-muted-foreground">Thanks — I'll get back to you soon.</p>
-              <button type="button" id="send-another" class="font-mono text-sm text-neon-cyan underline">send another</button>
-            </div>
         </form>
         <div class="reveal glass neon-border flex h-full flex-col justify-center rounded-3xl p-10 text-center">
           <a href="mailto:hanssureshsoni@gmail.com" class="animate-glitch text-6xl font-bold leading-none tracking-tighter md:text-8xl">HANS<br><span class="text-neon">SONI.</span></a>

@@ -24,7 +24,7 @@ This is a static HTML, CSS, and JavaScript site. It has no package installation 
 
 2. Visit `http://localhost:8000`.
 
-The Google Fonts stylesheet and contact form submission require an internet connection. The contact form submits to FormSubmit and does not use a project-owned backend.
+Google Fonts requires an internet connection. The contact form validates the visitor's details and opens their configured email app with a prefilled draft addressed to Hans; the visitor reviews and sends it from that app.
 
 ## Website contents
 
@@ -60,7 +60,7 @@ Design-system resources retained from the earlier Organic theme. The current por
 - Sections and cards reveal as they enter the viewport.
 - The top progress indicator follows page scrolling.
 - Cards tilt on pointer devices; reduced-motion settings disable animations.
-- The contact form validates fields and submits through FormSubmit to the portfolio email address.
+- The contact form validates fields and opens a prefilled `mailto:` draft for the visitor to review and send.
 
 ## Portfolio content
 

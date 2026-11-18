@@ -162,12 +162,10 @@ if (window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers
 }
 
 const contactForm = document.querySelector("#contact-form");
-contactForm?.addEventListener("submit", async (event) => {
+contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const form = event.currentTarget;
-  const formFields = form.querySelector(".space-y-4");
-  const successPanel = form.querySelector("#contact-success");
   const rawValues = Object.fromEntries(new FormData(form));
   const values = {
     name: rawValues.name.trim(),
@@ -192,50 +190,11 @@ contactForm?.addEventListener("submit", async (event) => {
 
   if (!isValid) return;
 
-  const submitButton = form.querySelector('button[type="submit"]');
-  const buttonLabel = submitButton.querySelector("span");
   const status = document.querySelector("#contact-status");
-  const originalLabel = buttonLabel.textContent;
-  submitButton.disabled = true;
-  buttonLabel.textContent = "Sending…";
-  status.hidden = true;
+  const subject = encodeURIComponent(`Portfolio message from ${values.name}`);
+  const body = encodeURIComponent(`Hi Hans,\n\n${values.message}\n\n— ${values.name}\n${values.email}`);
 
-  try {
-    const response = await fetch("https://formsubmit.co/ajax/hanssureshsoni@gmail.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        ...values,
-        _subject: `Portfolio message from ${values.name}`,
-        _replyto: values.email,
-        _template: "table",
-        _captcha: "false",
-      }),
-    });
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok || result.success === false || result.success === "false") {
-      throw new Error("Unable to send message.");
-    }
-
-    form.reset();
-    formFields.hidden = true;
-    successPanel.hidden = false;
-  } catch {
-    status.textContent = "Couldn't send right now. Please email me directly.";
-    status.hidden = false;
-  } finally {
-    submitButton.disabled = false;
-    buttonLabel.textContent = originalLabel;
-  }
-});
-
-document.querySelector("#send-another")?.addEventListener("click", () => {
-  const form = document.querySelector("#contact-form");
-  form.querySelector("#contact-success").hidden = true;
-  form.querySelector(".space-y-4").hidden = false;
-  form.querySelector("#contact-status").hidden = true;
-  form.querySelector("#name").focus();
+  status.textContent = "Your email app should open with a prefilled draft. Review it and press Send there. If it doesn't open, use the Email link in this section.";
+  status.hidden = false;
+  window.location.href = `mailto:hanssureshsoni@gmail.com?subject=${subject}&body=${body}`;
 });
