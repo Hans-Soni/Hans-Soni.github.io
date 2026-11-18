@@ -75,11 +75,11 @@ if (nameElement) {
 const roleElement = document.querySelector("#typed-role");
 if (roleElement) {
   const roles = [
-    "Cybersecurity Enthusiast",
+    "Cybersecurity & SOC analyst",
     "Software Engineer",
     "Full-Stack Developer",
     "CTF Player",
-    "Team Lead",
+    "Teamwork",
   ];
   let roleIndex = 0;
   let roleText = "";
