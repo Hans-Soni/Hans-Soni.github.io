@@ -2,7 +2,7 @@ const canvas = document.querySelector("#matrix-canvas");
 
 if (canvas) {
   const context = canvas.getContext("2d");
-  const characters = "01<>/{}#$%&*SECURE";
+  const characters = "01アイウエオ<>/{}#$%&*SECURE";
   const colors = getComputedStyle(document.documentElement);
   const neonLime = colors.getPropertyValue("--neon-lime").trim();
   const neonPink = colors.getPropertyValue("--neon-pink").trim();
