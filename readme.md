@@ -64,7 +64,7 @@ Design-system resources retained from the earlier Organic theme. The current por
 
 ## Portfolio content
 
-- **Let's Connect** — Secure real-time chat application.
+- **Samवाद** — Secure real-time chat application.
 - **SafeInBox AI** — Phishing and malicious URL analyzer.
 - **Adaptive Reading Aid** — Accessibility extension for dyslexia, built with a student team.
 - **Experience simulations** — Mastercard, Goldman Sachs, and TCS.
