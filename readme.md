@@ -68,5 +68,6 @@ Design-system resources retained from the earlier Organic theme. The current por
 - **Samवाद** — Secure real-time chat application: [open project](https://hans-soni.github.io/Let-s-Connect/).
 - **SafeInBox AI** — Phishing and malicious URL analyzer.
 - **Adaptive Reading Aid** — Accessibility extension for dyslexia, built with a student team.
+- **Education** — B.Tech in Computer Science & Engineering at PIET, Parul University (expected 2027); Class XII (2023) and Class X (2021).
 - **Experience simulations** — Mastercard, Goldman Sachs, and TCS.
 - **Achievement** — Top 3 in the Google Skills Diamond League.
