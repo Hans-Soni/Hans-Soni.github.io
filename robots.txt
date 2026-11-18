@@ -1,3 +1,4 @@
+# Search crawler rules for Hans Soni's portfolio.
 User-agent: *
 Allow: /
 Disallow: /404.html

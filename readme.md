@@ -1,79 +1,71 @@
-# Hans Soni - Personal Portfolio
-A high-performance, interactive personal portfolio website showcasing my software engineering projects, skills, and experience. This project uses a uniquely built, lightweight reactive frontend runtime (support.js) that seamlessly parses and renders custom HTML templates into efficient React components.
+# Hans Soni — Portfolio
 
-## 🌐 Live Preview
-You can view the live portfolio deployed on either of the following platforms:
+Personal portfolio for Hans Soni, a Computer Science undergraduate at Parul University (B.Tech CSE, expected 2027). I build security-first full-stack software, including secure real-time applications, defensive APIs, phishing-analysis tools, and accessibility projects. I have led a student development team, solved a CyLab CTF challenge, completed 150+ LeetCode problems, and ranked in the top 3 of the Google Skills Diamond League.
 
-[GitHub](https://hans-soni.github.io/)
+## Live site
 
-[Netlify](https://hanssoni.netlify.app/)
+- Portfolio: [hans-soni.github.io](https://hans-soni.github.io/)
+- GitHub: [Hans-Soni](https://github.com/Hans-Soni)
+- LinkedIn: [Hans Soni](https://www.linkedin.com/in/hans-soni-59b294352)
+- Credly: [Hans Soni](https://www.credly.com/users/hans-soni/badges/credly)
+- Google Skills: [Hans Soni](https://www.skills.google/public_profiles/e68808c6-c66b-4b9d-bb3f-3aa6d3e7564f)
+- LeetCode: [hanssoni](https://leetcode.com/u/hanssoni/)
+- Email: [hanssureshsoni@gmail.com](mailto:hanssureshsoni@gmail.com)
 
-## 📂 Complete Repository Structure
-This repository is structured into a few key files and folders, each serving a distinct role in keeping the portfolio interactive, performant, and stylish:
+## Run locally
 
-## 1. Root Files
+This is a static HTML, CSS, and JavaScript site. It has no package installation or build step.
 
-### index.html
-Description: The main entry point and single-page template of the portfolio.
-Contents: It contains the complete structure of the website, including sections for Hero, About, Skills, Projects, Certifications, Education, and Contact. It utilizes a custom declarative tag syntax and embedded JavaScript component logic (DCLogic) to manage states like theming (Light/Dark mode) and mobile navigation.
+1. Open `index.html` directly, or start a local server from the repository root:
 
-### support.js
-Description: The powerhouse custom runtime engine of the application.
-Contents: A bespoke JavaScript runtime that acts as the bridge between the custom declarative HTML in index.html and React/ReactDOM. It manages template compilation, data binding (resolving expressions), DOM updates, scroll observers, event handling, and rendering the custom cursor.
+   ```sh
+   python -m http.server 8000
+   ```
 
-## 2. assets/ Folder
-Contains all the static media and documents served on the website.
+2. Visit `http://localhost:8000`.
 
-### Hans_Soni_Resume.pdf: 
-The downloadable version of my latest resume linked in the Hero section.
+The Google Fonts stylesheet and contact form submission require an internet connection. The contact form submits to FormSubmit and does not use a project-owned backend.
 
-### hans-soni.png: 
-The primary profile picture displayed inside the interactive 3D-tilt hero card.
+## Website contents
 
-## 3. ds/ (Design System) Folder
-Contains the styling, theming, and foundational design configurations.
+The main page includes a terminal-inspired hero, animated code rain and scanlines, profile links, an About section with achievement cards, skills, projects, job simulations and certifications, and a contact form. The page is responsive and honors reduced-motion preferences.
 
-### styles.css: The core stylesheet. 
-It implements the "Glassmorphism" UI, responsive breakpoints, layout grids, and global utilities used across the portfolio.
+## Repository map
 
-### bundle.js: 
-A minified JavaScript bundle associated with the design system components.
+### Root files
 
-### manifest.json: 
-The metadata and configuration manifest for the design system tokens and definitions.
+- `index.html` — Main portfolio markup, metadata, navigation, hero, About and Google Skills ranking cards, skills, projects, experience, certifications, contact form, and footer. Loads `styles.css`, `custom.css`, and `script.js`.
+- `styles.css` — Generated Tailwind CSS stylesheet used by the main page. Contains the dark neon theme, utility classes, typography, responsive layout, and animation utilities.
+- `custom.css` — Additional portfolio styles for reveal transitions, card tilt, the custom cursor, contact status, and reduced-motion behavior.
+- `script.js` — Main-page interactions: animated code rain, name scramble, typewriter roles, reveal-on-scroll, scroll progress, cursor tracking, card tilt, and validated contact-form submission.
+- `404.html` — Branded not-found page with the current dark neon theme, animated background, noindex metadata, and links back to the portfolio and contact section. It loads the shared root `styles.css`, `custom.css`, and `script.js`.
+- `support.js` — Earlier custom declarative/React-compatible runtime retained in the repository. The current `index.html` does not load it.
+- `robots.txt` — Search-crawler rules and the sitemap location; excludes the 404 page from indexing.
+- `sitemap.xml` — XML sitemap containing the canonical portfolio URL and its indexing metadata.
+- `.thumbnail` — WebP thumbnail/preview image stored at the repository root; it is not referenced by the main page.
+- `readme.md` — This project overview, setup guide, and repository file map.
 
-### adherence.oxlintrc.json: 
-The linter configuration to maintain strict code quality and formatting rules within the design system.
+### `assets/`
 
-### README.md: 
-Specific documentation and guidelines detailing the usage of the design system components.
+Static image and document files used by the portfolio. See [`assets/README.md`](./assets/README.md) for per-file details.
 
-## 🚀 Core Features
+### `ds/`
 
-### Custom Reactive Runtime: 
-No bulky frameworks were used for the UI—instead, support.js compiles <sc-if> and <sc-for> logic directly from HTML to highly optimized React elements.
+Design-system resources retained from the earlier Organic theme. The current portfolio and 404 page do not load this design system. See [`ds/README.md`](./ds/README.md) for details about each stylesheet, manifest, bundle, and lint configuration.
 
-### Dynamic UI & Animations: 
-Includes smooth 3D tilt interactions on images, floating shape parallax effects, a custom interactive mouse cursor, and CSS keyframe micro-animations.
+## Main page interactions
 
-### Built-in Theming System: 
-Robust support for Light and Dark modes managed by responsive CSS variables.
+- Code rain responds to pointer proximity; scanlines remain fixed over the background.
+- The hero role text and name animate on load.
+- Sections and cards reveal as they enter the viewport.
+- The top progress indicator follows page scrolling.
+- Cards tilt on pointer devices; reduced-motion settings disable animations.
+- The contact form validates fields and submits through FormSubmit to the portfolio email address.
 
-### Security-Focused Content: 
-Highlights a security-first engineering approach, reflecting my background in end-to-end encryption, secure coding, and robust architecture.
+## Portfolio content
 
-## 👨‍💻 About Me
-I am a Computer Science undergraduate engineering secure, full-stack software. My work spans from end-to-end encrypted messaging to RESTful API design and defensive input handling. I am passionate about building systems where encryption and secure coding are at the core of the architecture.
-
-## LinkedIn:
-[Hans-Soni](https://www.linkedin.com/in/hans-soni-59b294352)
-## GitHub:
-[Hans-Soni](https://github.com/Hans-Soni)
-## LeetCode:
-[Hans-Soni](https://leetcode.com/u/hanssoni/)
-## Credly:
-[Hans-Soni](https://www.credly.com/users/hans-soni/badges/credly)
-## Google Skills:
-[Hans-Soni](https://www.skills.google/public_profiles/e68808c6-c66b-4b9d-bb3f-3aa6d3e7564f)
-## Email:
-[Hans-Soni](mailto:hanssureshsoni@gmail.com)
+- **Let's Connect** — Secure real-time chat application.
+- **SafeInBox AI** — Phishing and malicious URL analyzer.
+- **Adaptive Reading Aid** — Accessibility extension for dyslexia, built with a student team.
+- **Experience simulations** — Mastercard, Goldman Sachs, and TCS.
+- **Achievement** — Top 3 in the Google Skills Diamond League.
