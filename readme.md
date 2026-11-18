@@ -60,11 +60,12 @@ Design-system resources retained from the earlier Organic theme. The current por
 - Sections and cards reveal as they enter the viewport.
 - The top progress indicator follows page scrolling.
 - Cards tilt on pointer devices; reduced-motion settings disable animations.
+- The Samवाद card opens the live chat project; phones and tablets use the top-right menu to navigate sections.
 - The contact form validates fields and opens a prefilled `mailto:` draft for the visitor to review and send.
 
 ## Portfolio content
 
-- **Samवाद** — Secure real-time chat application.
+- **Samवाद** — Secure real-time chat application: [open project](https://hans-soni.github.io/Let-s-Connect/).
 - **SafeInBox AI** — Phishing and malicious URL analyzer.
 - **Adaptive Reading Aid** — Accessibility extension for dyslexia, built with a student team.
 - **Experience simulations** — Mastercard, Goldman Sachs, and TCS.

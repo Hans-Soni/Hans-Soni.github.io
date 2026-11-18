@@ -25,19 +25,37 @@
     <div aria-hidden="true" class="scanlines pointer-events-none fixed inset-0 -z-10"></div>
     <div id="scroll-progress" aria-hidden="true" class="fixed inset-x-0 top-0 z-50 h-1 origin-left" style="transform: scaleX(0); background: var(--gradient-neon)"></div>
 
-    <nav aria-label="Primary navigation" class="glass fixed left-1/2 top-4 z-40 flex -translate-x-1/2 gap-1 rounded-full px-2 py-2 font-mono text-xs md:text-sm">
-      <a class="hidden rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground sm:block" href="#about">about</a>
-      <a class="hidden rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground sm:block" href="#skills">skills</a>
-      <a class="hidden rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground sm:block" href="#projects">projects</a>
-      <a class="hidden rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground sm:block" href="#experience">experience</a>
-      <a class="hidden rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground sm:block" href="#contact">contact</a>
-      <a href="assets/Hans_Soni_Resume.pdf" target="_blank" rel="noreferrer" class="flex items-center gap-1 rounded-full bg-primary px-3 py-1.5 font-semibold text-primary-foreground">
-        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8"></path></svg>
-        resume
-      </a>
-      <a href="assets/Hans_Soni_Resume.pdf" download="Hans_Soni_Resume.pdf" aria-label="Download resume" class="grid place-items-center rounded-full px-2 text-neon-lime">
-        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5M12 15V3"></path></svg>
-      </a>
+    <nav aria-label="Primary navigation" class="primary-navigation fixed z-40 font-mono text-xs md:text-sm">
+      <div class="desktop-navigation glass flex gap-1 rounded-full px-2 py-2">
+        <a class="rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground" href="#about">about</a>
+        <a class="rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground" href="#skills">skills</a>
+        <a class="rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground" href="#projects">projects</a>
+        <a class="rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground" href="#experience">experience</a>
+        <a class="rounded-full px-3 py-1.5 text-muted-foreground transition hover:bg-primary hover:text-primary-foreground" href="#contact">contact</a>
+        <a href="assets/Hans_Soni_Resume.pdf" target="_blank" rel="noreferrer" class="flex items-center gap-1 rounded-full bg-primary px-3 py-1.5 font-semibold text-primary-foreground">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8"></path></svg>
+          resume
+        </a>
+        <a href="assets/Hans_Soni_Resume.pdf" download="Hans_Soni_Resume.pdf" aria-label="Download resume" class="grid place-items-center rounded-full px-2 text-neon-lime">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5M12 15V3"></path></svg>
+        </a>
+      </div>
+      <div class="mobile-navigation">
+        <button id="mobile-menu-toggle" type="button" class="glass grid h-12 w-12 place-items-center rounded-full text-neon-lime" aria-label="Open navigation menu" aria-controls="mobile-navigation-menu" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="mobile-menu-icon mobile-menu-icon-open h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="mobile-menu-icon mobile-menu-icon-close h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+        </button>
+        <div id="mobile-navigation-menu" class="mobile-navigation-menu glass neon-border rounded-2xl p-2" hidden>
+          <a href="#home">home</a>
+          <a href="#about">about</a>
+          <a href="#skills">skills</a>
+          <a href="#projects">projects</a>
+          <a href="#experience">experience</a>
+          <a href="#contact">contact</a>
+          <a href="assets/Hans_Soni_Resume.pdf" target="_blank" rel="noreferrer">resume</a>
+          <a href="assets/Hans_Soni_Resume.pdf" download="Hans_Soni_Resume.pdf">download resume</a>
+        </div>
+      </div>
     </nav>
 
     <header id="home" class="relative mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-6 pt-28 md:grid-cols-[1.3fr_1fr]">
@@ -120,10 +138,10 @@
     <section id="projects" class="mx-auto max-w-6xl px-6 py-24">
       <div class="reveal"><p class="font-mono text-sm text-neon-lime">// projects</p><h2 class="mt-2 text-4xl font-bold md:text-6xl">Things I've shipped.</h2></div>
       <div class="mt-12 space-y-8">
-        <article class="reveal glass neon-border group rounded-3xl p-8 md:p-12">
-          <div class="flex flex-wrap items-baseline justify-between gap-4"><div><span class="font-mono text-sm text-muted-foreground">01</span><h3 class="text-4xl font-bold md:text-5xl text-neon-lime">Samवाद</h3><p class="mt-1 text-muted-foreground">Secure real-time chat platform</p></div><span class="rounded-full border border-border px-3 py-1 font-mono text-xs">● LIVE</span></div>
+        <a href="https://hans-soni.github.io/Let-s-Connect/" aria-label="Open the Samवाद secure real-time chat project" class="project-card-link reveal glass neon-border group block rounded-3xl p-8 md:p-12">
+          <div class="flex flex-wrap items-baseline justify-between gap-4"><div><span class="font-mono text-sm text-muted-foreground">01</span><h3 class="text-4xl font-bold text-neon-lime md:text-5xl">Samवाद</h3><p class="mt-1 text-muted-foreground">Secure real-time chat platform</p></div><span class="rounded-full border border-border px-3 py-1 font-mono text-xs">● LIVE</span></div>
           <ul class="mt-8 grid gap-3 md:grid-cols-2"><li class="font-mono text-sm"><span class="text-neon-lime">▹ </span>AES-256-GCM encryption at rest with a twice-daily rotating key ring</li><li class="font-mono text-sm"><span class="text-neon-lime">▹ </span>Short-lived tokens, silent refresh, strict CORS and Arcjet WAF</li><li class="font-mono text-sm"><span class="text-neon-lime">▹ </span>Automated tamper, token-forgery and injection test suite</li><li class="font-mono text-sm"><span class="text-neon-lime">▹ </span>Live presence, read receipts, voice notes, media sharing</li></ul>
-        </article>
+        </a>
         <article class="reveal glass neon-border group rounded-3xl p-8 md:p-12">
           <div class="flex flex-wrap items-baseline justify-between gap-4"><div><span class="font-mono text-sm text-muted-foreground">02</span><h3 class="text-4xl font-bold md:text-5xl text-neon-pink">SafeInBox AI</h3><p class="mt-1 text-muted-foreground">Phishing &amp; malicious URL analyzer</p></div><span class="rounded-full border border-border px-3 py-1 font-mono text-xs">● IN PROGRESS</span></div>
           <ul class="mt-8 grid gap-3 md:grid-cols-2"><li class="font-mono text-sm"><span class="text-neon-pink">▹ </span>Browser extension + local backend + CLI toolkit</li><li class="font-mono text-sm"><span class="text-neon-pink">▹ </span>ML models and rule-based checks for brand impersonation</li><li class="font-mono text-sm"><span class="text-neon-pink">▹ </span>Sender-domain mismatch detection, defanged URLs</li></ul>

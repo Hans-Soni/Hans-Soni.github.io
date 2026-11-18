@@ -135,6 +135,39 @@ window.addEventListener("scroll", updateScrollProgress, { passive: true });
 window.addEventListener("resize", updateScrollProgress, { passive: true });
 updateScrollProgress();
 
+const mobileMenuToggle = document.querySelector("#mobile-menu-toggle");
+const mobileMenu = document.querySelector("#mobile-navigation-menu");
+if (mobileMenuToggle && mobileMenu) {
+  function setMobileMenuOpen(isOpen) {
+    mobileMenu.hidden = !isOpen;
+    mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    mobileMenuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  }
+
+  mobileMenuToggle.addEventListener("click", () => {
+    setMobileMenuOpen(mobileMenuToggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMobileMenuOpen(false));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target instanceof Node
+      && !mobileMenu.contains(event.target)
+      && !mobileMenuToggle.contains(event.target)) {
+      setMobileMenuOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobileMenuToggle.getAttribute("aria-expanded") === "true") {
+      setMobileMenuOpen(false);
+      mobileMenuToggle.focus();
+    }
+  });
+}
+
 const cursor = document.querySelector("#custom-cursor");
 if (cursor && window.matchMedia("(pointer: fine)").matches) {
   window.addEventListener("mousemove", (event) => {
